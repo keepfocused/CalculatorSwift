@@ -45,6 +45,8 @@ class ViewController: UIViewController {
             case "√":
                 let operand = Double(displayLabel!.text!)!
                 displayValue = sqrt(operand)
+            case "123":
+                print("хуй")
             default:
                 break
             }
