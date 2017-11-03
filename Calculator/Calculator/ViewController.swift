@@ -10,11 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var displayLabel: UILabel!
+    @IBOutlet private weak var displayLabel: UILabel!
     
-    var userIsInTheMiddleOfTyping = false
+    private var userIsInTheMiddleOfTyping = false
 
-    @IBAction func touchDigit(_ sender: UIButton) {
+    @IBAction private func touchDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
         
         if userIsInTheMiddleOfTyping {
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var displayValue: Double {
+   private var displayValue: Double {
         get {
             return Double(displayLabel.text!)!
         }
@@ -34,23 +34,52 @@ class ViewController: UIViewController {
             displayLabel.text = String(newValue)
         }
     }
+    
+    private var brain = CalculatorBrain()
 
-    @IBAction func performAction(_ sender: UIButton) {
+    @IBAction private func performAction(_ sender: UIButton) {
+        
+        if userIsInTheMiddleOfTyping
+        {
+            brain.setOperand(operand: displayValue)
+            userIsInTheMiddleOfTyping = false
+        }
+        if userIsInTheMiddleOfTyping == false
+        {
+          if let mathematicalSymbol = sender.currentTitle
+          {
+            brain.performAction(symbol: mathematicalSymbol)
+          }
+            displayValue = brain.result
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
         userIsInTheMiddleOfTyping = false
+        
         if let mathematicalSymbol = sender.currentTitle {
             switch mathematicalSymbol {
             case "П":
                 displayValue = Double.pi
-                
             case "√":
                 let operand = Double(displayLabel!.text!)!
                 displayValue = sqrt(operand)
-            case "123":
-                print("хуй")
             default:
                 break
             }
         }
+ */
+
     }
 
 
