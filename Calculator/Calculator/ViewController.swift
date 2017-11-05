@@ -51,7 +51,6 @@ class ViewController: UIViewController {
                 brain.performAction(symbol: mathematicalSymbol)
             }
             displayValue = brain.result
-            
         }
         
         
