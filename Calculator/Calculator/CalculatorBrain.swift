@@ -17,6 +17,7 @@ class CalculatorBrain  {
         accumulator = operand
     }
     
+<<<<<<< HEAD
     var operations: Dictionary<String,Operation> = [
         "П" : Operation.Constant(Double.pi),
         "e" : Operation.Constant(M_E),
@@ -59,13 +60,24 @@ class CalculatorBrain  {
 //        default:
 //            break
 //        }
+=======
+    func performAction(symbol: String)
+    {
+        switch symbol {
+            
+            case "П":accumulator = Double.pi
+            case "√":accumulator = sqrt(accumulator)
+        default:
+            break
+        }
+>>>>>>> parent of ec4eb72... Logic changes
     }
     
     var result: Double
     {
         get
         {
-            return accumulator
+         return accumulator
         }
     }
     

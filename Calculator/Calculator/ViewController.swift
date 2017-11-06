@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var displayLabel: UILabel!
     
     private var userIsInTheMiddleOfTyping = false
-    
+
     @IBAction private func touchDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
         
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private var displayValue: Double {
+   private var displayValue: Double {
         get {
             return Double(displayLabel.text!)!
         }
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
     
     private var brain = CalculatorBrain()
-    
+
     @IBAction private func performAction(_ sender: UIButton) {
         
         if userIsInTheMiddleOfTyping
@@ -46,11 +46,15 @@ class ViewController: UIViewController {
         }
         if userIsInTheMiddleOfTyping == false
         {
-            if let mathematicalSymbol = sender.currentTitle
-            {
-                brain.performAction(symbol: mathematicalSymbol)
-            }
+          if let mathematicalSymbol = sender.currentTitle
+          {
+            brain.performAction(symbol: mathematicalSymbol)
+          }
             displayValue = brain.result
+<<<<<<< HEAD
+=======
+        
+>>>>>>> parent of ec4eb72... Logic changes
         }
         
         
