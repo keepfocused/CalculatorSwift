@@ -41,48 +41,21 @@ class ViewController: UIViewController {
         
         if userIsInTheMiddleOfTyping
         {
-            brain.setOperand(operand: displayValue)
+            brain.setOperand(displayValue)
             userIsInTheMiddleOfTyping = false
         }
-        if userIsInTheMiddleOfTyping == false
+        
+        if let mathematicalSymbol = sender.currentTitle
         {
-            if let mathematicalSymbol = sender.currentTitle
-            {
-                brain.performAction(symbol: mathematicalSymbol)
-            }
-            displayValue = brain.result
-            
+            brain.perfromOperation(mathematicalSymbol)
         }
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /*
-        userIsInTheMiddleOfTyping = false
-        
-        if let mathematicalSymbol = sender.currentTitle {
-            switch mathematicalSymbol {
-            case "П":
-                displayValue = Double.pi
-            case "√":
-                let operand = Double(displayLabel!.text!)!
-                displayValue = sqrt(operand)
-            default:
-                break
-            }
+        if let result = brain.result
+        {
+            displayValue = result
         }
- */
-
+        
+       
     }
-
-
-
 }
 
