@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet private weak var displayLabel: UILabel!
+    @IBOutlet weak var history: UILabel!
     
     private var userIsInTheMiddleOfTyping = false
     
@@ -60,6 +61,11 @@ class ViewController: UIViewController {
         if let result = brain.result
         {
             displayValue = result
+        }
+        
+        if let description = brain.description
+        {
+            history.text = description + (brain.resultIsPending ? "..." : " =")
         }
         
        
