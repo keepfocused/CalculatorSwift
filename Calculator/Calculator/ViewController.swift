@@ -14,12 +14,19 @@ class ViewController: UIViewController {
     
     private var userIsInTheMiddleOfTyping = false
     
+    let decimalSeparator = "."
+    
     @IBAction private func touchDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
         
         if userIsInTheMiddleOfTyping {
             let textCurrentlyInDisplay = self.displayLabel.text!
-            displayLabel.text = textCurrentlyInDisplay + digit
+            
+            if (digit != decimalSeparator) || !(textCurrentlyInDisplay.contains(decimalSeparator))
+            {
+                displayLabel.text = textCurrentlyInDisplay + digit
+            }
+           
         } else {
             displayLabel.text = digit
             userIsInTheMiddleOfTyping = true

@@ -23,7 +23,7 @@ struct CalculatorBrain {
         [
             "П" : Operation.constant(Double.pi),
             "e" : Operation.constant(M_E),
-            "√" : Operation.unaryOperation(sqrt), // sqrt
+            "√" : Operation.unaryOperation(sqrt),
             "cos" : Operation.unaryOperation(cos),
             "sin" : Operation.unaryOperation(sin),
             "±" : Operation.unaryOperation({ -$0 }),
