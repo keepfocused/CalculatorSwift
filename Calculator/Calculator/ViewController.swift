@@ -34,6 +34,14 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func clearAll(_ sender: UIButton)
+    {
+        brain.clear()
+        displayValue = 0
+        history.text = " "
+    }
+    
+    
     private var displayValue: Double {
         get {
             return Double(displayLabel.text!)!
@@ -67,8 +75,16 @@ class ViewController: UIViewController {
         {
             history.text = description + (brain.resultIsPending ? "..." : " =")
         }
-        
-       
     }
+    
+    @IBAction func backspace(_ sender: UIButton)
+    {
+        guard userIsInTheMiddleOfTyping && !displayLabel.text!.isEmpty else { return }
+        displayLabel.text = String (displayLabel.text!.characters.dropLast())
+        if displayLabel.text!.isEmpty {
+            displayValue = 0
+        }
+    }
+    
 }
 

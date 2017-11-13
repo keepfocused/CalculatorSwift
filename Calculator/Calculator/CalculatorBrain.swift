@@ -23,7 +23,6 @@ struct CalculatorBrain {
                 return pendingBinaryOperation!.descriptionFunction(pendingBinaryOperation!.descriptionOperand, descriptionAccumulator ?? "")
             }
         }
-        
     }
     
     private enum Operation {
@@ -96,7 +95,6 @@ struct CalculatorBrain {
                         if descriptionFunction == nil {
                             descriptionFunction = {$0 + " " + symbol + " " + $1}
                         }
-                        
                     
                     pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: accumulator!,descriptionFunction:descriptionFunction!,descriptionOperand: descriptionAccumulator!)
                     accumulator = nil
@@ -162,6 +160,13 @@ struct CalculatorBrain {
         return formatter
         
     } ()
+    
+    mutating func clear()
+    {
+        accumulator = nil
+        pendingBinaryOperation = nil
+        descriptionAccumulator = " "
+    }
     
     
 

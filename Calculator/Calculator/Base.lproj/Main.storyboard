@@ -55,6 +55,9 @@
                                                                 <state key="normal" title="C">
                                                                     <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="clearAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KRv-NX-eeA"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQZ-j4-lHn">
                                                                 <rect key="frame" x="72.666666666666657" y="0.0" width="62.999999999999972" height="79.333333333333329"/>
@@ -63,6 +66,9 @@
                                                                 <state key="normal" title="D">
                                                                     <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="backspace:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Imc-Lh-rd0"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtH-Hi-b4i">
                                                                 <rect key="frame" x="145.66666666666666" y="0.0" width="62.666666666666686" height="79.333333333333329"/>
